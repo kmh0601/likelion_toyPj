@@ -25,6 +25,7 @@ class guestBookList(APIView):
         return Response(serializer.data)
 
 class guestBookDetail(APIView):
+	serializer_class = guestBookSerializer
 
 	def get(self, request, id):
 		guestBook =  get_object_or_404(GuestBook,id=id)
